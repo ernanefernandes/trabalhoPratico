@@ -1,0 +1,281 @@
+@charset "utf-8";
+
+body {
+	background-color : #73d216;
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0px;
+	font-weight: normal
+}
+
+header {
+	padding: 5px;
+	margin-bottom: 20px;
+	height: 30px;
+	background-color: #204a87;
+	color: #fff;
+	box-shadow: 0px 2px 2px rgb(78, 154, 6)
+}
+
+#conteudo {
+	padding: 0px 8px
+}
+
+footer {
+	border-top: 1px solid #ccc;
+	padding: 5px 8px;
+	margin-top: 20px;
+	margin-bottom: 10px
+}
+#login-dialog {
+	width: 260px;
+	margin: auto;
+	margin-top: 150px;
+}
+
+.grid-login {
+	background-color: #f2f2f2;
+	border-radius: 8px;
+	border: 1px solid #ccc;
+	margin-top: 8px;
+	padding: 10px;
+	width: 100%
+}
+
+.ajax-status {
+	position: fixed;
+	top: 85px;
+	right: 10px;
+	width: 35px;
+	height: 35px
+}
+
+menubar {
+	margin-top: 0px;
+	margin-bottom: 05px;
+	margin-top: 05px
+}
+
+body {
+	background-image: url(..\images\logo.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0px;
+	font-weight: normal;
+
+}
+
+header {
+	padding: 5px;
+	margin-bottom: 20px;
+	height: 02px;
+	background-color: rgb(32, 74, 135);
+	color: #fff;
+	box-shadow: 0px 2px 2px #ccc
+}
+
+#formLogin {
+	font-size: 12px;
+	font-weight: 100;
+	padding: 0px;
+	margin: 0px;
+	margin-bottom: 10px
+}
+
+footer {
+	border-top: 1px solid #ccc;
+	padding: 5px 8px;
+	margin-top: 20px;
+	margin-bottom: 10px
+}
+
+h4 {
+	font-size: 12px;
+	font-weight: 500;
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 0px;
+	margin: 0px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+/* CSS reset */
+*, *:before, *:after {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, sans-serif;
+}
+
+/* remove a linha dos links */
+a {
+	text-decoration: none;
+}
+
+/* esconde as ancoras da tela */
+a.links {
+	display: none;
+}
+
+.content {
+	width: 500px;
+	min-height: 560px;
+	margin: 0px auto;
+	position: relative;
+}
+
+h1 {
+	font-size: 48px;
+	color: #066a75;
+	padding: 2px 0 10px 0;
+	font-family: Arial, sans-serif;
+	font-weight: bold;
+	text-align: center;
+	padding-bottom: 30px;
+}
+
+h1:after {
+	content: ' ';
+	display: block;
+	width: 100%;
+	height: 2px;
+	margin-top: 10px;
+	background: -webkit-linear-gradient(left, rgba(147, 184, 189, 0) 0%,
+		rgba(147, 184, 189, 0.8) 20%, rgba(147, 184, 189, 1) 53%,
+		rgba(147, 184, 189, 0.8) 79%, rgba(147, 184, 189, 0) 100%);
+	background: linear-gradient(left, rgba(147, 184, 189, 0) 0%,
+		rgba(147, 184, 189, 0.8) 20%, rgba(147, 184, 189, 1) 53%,
+		rgba(147, 184, 189, 0.8) 79%, rgba(147, 184, 189, 0) 100%);
+}
+
+p {
+	margin-bottom: 15px;
+}
+
+.content p:first-child {
+	margin: 0px;
+}
+
+label {
+	color: #405c60;
+	position: relative;
+}
+/* placeholder */
+::-webkit-input-placeholder {
+	color: #bebcbc;
+	font-style: italic;
+}
+
+input:-moz-placeholder, textarea:-moz-placeholder {
+	color: #bebcbc;
+	font-style: italic;
+}
+
+input {
+	outline: none;
+}
+
+/*estilo dos input,  menos o checkbox */
+input:not [type="checkbox"]{
+	width: 95%;
+	margin-top: 4px;
+	padding: 10px;
+	border: 1px solid #b2b2b2;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	-webkit-box-shadow: 0px 1px 4px 0px rgba(168, 168, 168, 0.6) inset;
+	box-shadow: 0px 1px 4px 0px rgba(168, 168, 168, 0.6) inset;
+	-webkit-transition: all 0.2s linear;
+	transition: all 0.2s linear;
+}
+
+/*estilo do botão submit */
+input[type="submit"] {
+	width: 100% !important;
+	cursor: pointer;
+	background: rgb(61, 157, 179);
+	padding: 8px 5px;
+	color: #fff;
+	font-size: 15px;
+	border: 1px solid #fff;
+	margin-bottom: 10px;
+	text-shadow: 0 1px 1px #333;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	transition: all 0.2s linear;
+}
+
+/*estilo do botão submit no hover */
+input[type="submit"]:hover {
+	background: #4ab3c6;
+}
+
+.link {
+	position: absolute;
+	background: #e1eaeb;
+	color: #7f7c7c;
+	left: 0px;
+	height: 20px;
+	width: 440px;
+	padding: 17px 30px 20px 30px;
+	font-size: 16px;
+	text-align: right;
+	border-top: 1px solid #dbe5e8;
+	-webkit-border-radius: 0 0 5px 5px;
+	border-radius: 0 0 5px 5px;
+}
+
+.link a {
+	font-weight: bold;
+	background: #f7f8f1;
+	padding: 6px;
+	color: rgb(29, 162, 193);
+	margin-left: 10px;
+	border: 1px solid #cbd518;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-transition: all 0.4s linear;
+	transition: all 0.4s linear;
+}
+
+.link a:hover {
+	color: #39bfd7;
+	background: #f7f7f7;
+	border: 1px solid #4ab3c6;
+}
+
+#cadastro, #login {
+	position: absolute;
+	top: 0px;
+	width: 88%;
+	padding: 18px 6% 60px 6%;
+	margin: 0 0 35px 0;
+	background: #f7f7f7;
+	border: 1px solid rgba(147, 184, 189, 0.8);
+	-box-shadow: 5px;
+	border-radius: 5px;
+	-webkit-animation-duration: 0.5s;
+	-webkit-animation-timing-function: ease;
+	-webkit-animation-fill-mode: both;
+	animation-duration: 0.5s;
+	animation-timing-function: ease;
+	animation-fill-mode: both;
+}
+
+/* Efeito ao clicar no botão ( Ir para Login ) */
+#paracadastro:target ~ .content #cadastro, #paralogin:target ~ .content #login
+	{
+	z-index: 2;
+	-webkit-animation-name: fadeInLeft;
+	animation-name: fadeInLeft;
+	-webkit-animation-delay: .1s;
+	animation-delay: .1s;
+}
+
+/* Efeito ao clicar no botão ( Cadastre-se ) */
+#registro:target ~ .content #login, #paralogin:target ~ .content #cadastro
+	{
+	-webkit-animation-name: fadeOutLeft;
+	animation-name: fadeOutLeft;
+}

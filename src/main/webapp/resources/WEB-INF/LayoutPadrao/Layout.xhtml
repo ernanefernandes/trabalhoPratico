@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title><ui:insert name="titulo">SGAMB</ui:insert></title>
+	<h:outputStylesheet library="css" name="sistema.css" />
+</h:head>
+
+<h:body>
+	<p:ajaxStatus styleClass="ajax-status">
+		<f:facet name="start">
+			<h:graphicImage library="imagens" name="carregando.gif" />
+		</f:facet>
+		<f:facet name="complete">
+			<h:outputText value="" />
+		</f:facet>
+	</p:ajaxStatus>
+
+	<h:header>
+	<div class="ui-g-12 ui-md-6 ui-lg-3" style="float: left">
+		<h:link outcome="/Home">
+			<h:graphicImage library="imagens" name="logo.png" />
+		</h:link>
+	</div>
+
+	<div class="ui-g-12 ui-md-6 ui-lg-3" style="float: right; margin-right: 110px">
+		<h:form style="display: inline-block" id="frm">
+			<p:menubar styleClass="menu-sistema">
+				<p:submenu label="Cadastro Geral">
+					<p:menuitem value="Usuários" outcome="/CadastroUsuario.xhtml" id="usuario"/>
+					<p:menuitem value="Localidade" outcome="/CadastroLocal.xhtml" id="localidade" />
+					<p:menuitem value="Setor" outcome="/CadastroSetor.xhtml" id="setor"/>
+				</p:submenu>
+				<p:menuitem value="Gerenciamento de Ativos" outcome="/GestaoAtivos.xhtml" id="gestaoAtivos" />
+				<p:menuitem value="Agendamento/Manuntenção" outcome="/Agendamento.xhtml" id="agendamento" />
+				<p:menuitem value="Processos" outcome="/Vazia.xhtml" id="processos" />
+				<p:menuitem value="Monitoramento de Barragens"  outcome="/Vazia.xhtml" id="monitoramento" />
+				<p:menuitem value="Segurança Comunicação" outcome="/Vazia.xhtml" id="seguranca" />
+				<p:menuitem value="Inteligência negócio" outcome="/Vazia.xhtml" id="negocio" />
+				<p:menuitem value="Compliance"	outcome="/Vazia.xhtml" id="compliance" />
+				<p:menuitem value="Relatório" outcome="/Vazia.xhtml" id="relatoriio" />
+				<p:menuitem value="Sair" icon="ui-icon-extlink" action="#{loginB.sair}" />
+			</p:menubar>
+		</h:form>
+	</div>
+	<div class="ui-g-12 ui-md-6 ui-lg-3" style="clear: both"></div>
+	</h:header>
+
+	<div class="ui-g-12 ui-md-6 ui-lg-3" id="conteudo">
+		<ui:insert name="corpo" />
+	</div>
+
+	<p:separator style="margin-top: 20px" />
+
+	<footer> Sistema de gestão ambiental - <a
+		href="http://sgamb.com" target="_blank">sgamb.com</a>
+	</footer>
+</h:body>
+
+</html>

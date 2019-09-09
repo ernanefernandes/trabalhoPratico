@@ -1,0 +1,66 @@
+<ui:composition template= "/resources/WEB-INF/LayoutPadrao/Layout.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:o="http://omnifaces.org/ui">
+
+
+	<ui:define name="corpo">
+		<h:form id="formCadastro">
+		<p:messages showDetail="false" showSummary="true" autoUpdate="true" />
+			<h1>
+				<h:outputText id="agendamento" value="Agendamento de manutenção" />
+			</h1>
+
+			<h:panelGrid id="gridAgendamento" columns="2">
+				<p:outputLabel value="Nome:" for="nome" />
+				<p:inputText id="nome" value="#{InsumosMB.insumos.nome}"
+					required="true" />
+
+				<p:outputLabel value="Data de cadastro" for="dataCadastro" />
+				<p:calendar id="dataCadastro" size="12" pattern="dd/MM/yyyy"
+					value="#{InsumoMB.insumos.dataCadastro}">
+					<p:ajax event="dateSelect" update="@this dataCadastro"
+						process="@this dataCadastro"
+						listener="#{InsumoMB.insumos.dataCadastroALterada}" />
+					<p:ajax event="change" update="@this dataCadastro"
+						process="@this dataCadastro"
+						listener="#{InsumoMB.insumos.dataCadastroAlterada}" />
+				</p:calendar>
+
+				<p:outputLabel value="Fornecedor:" for="fornecedor" />
+				<p:inputText id="fornecedor" value="#{InsumoMB.insumos.fornecedor}"
+					required="true" />
+
+				<p:outputLabel value="Número de série" for="numSerie" />
+				<p:inputText id="numSerie" size="60"
+					value="#{InsumoMB.insumos.numeroSerie}" required="false" />
+
+				<p:outputLabel value="Tipo:" for="tipo" />
+
+				<p:selectOneButton id="tipo" value="#{InsumoMB.insumos.tipo.descricao}">
+					<f:selectItems value="#{InsumoMB.insumos.tipo.descricao}" var="tipo"
+						itemValue="#{InsumoMB.insumos.tipo.descricao}"
+						itemLabel="#{InsumoMB.insumos.tipo.descricao}" />
+				</p:selectOneButton>
+				<p:outputLabel value="Local:" for="local" size = "60"/>
+				<p:selectOneMenu value="#{InsumoMB.insumos.local.nome}" id="local"
+					filter="true" filterMatchMode="contains">
+					<f:selectItem itemLabel="Selecione" noSelectionOption="true" />
+					<f:selectItems value="#{InsumoMB.insumos.local.nome}" var="local"
+						itemValue="#{LocalidadeMB.localidade}" itemLabel="#{LocalidadeMB.localidade.nome}" />
+				</p:selectOneMenu>
+
+				<p:outputLabel value="Descrição" for="desc" />
+				<p:inputText id="desc" size="60"
+					value="#{InsumoMB.insumos.descricao}" required="false" />
+			</h:panelGrid>
+			<p:messages showDetail="false" showSummary="true" autoUpdate="true" />
+			<h:messages id="msgErro" style="color: red" />
+			<h:commandButton id="botao" value="Cadastrar"
+				action="#{InsumoMB.inserir}" />
+		</h:form>
+	</ui:define>
+</ui:composition>

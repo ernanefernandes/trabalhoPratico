@@ -1,0 +1,35 @@
+<ui:composition template= "/resources/WEB-INF/LayoutPadrao/Layout.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:o="http://omnifaces.org/ui">
+
+
+	<ui:define name="corpo">
+		<h:form id="formCadastro">
+		<p:messages showDetail="false" showSummary="true" autoUpdate="true" />
+			<h1>
+				<h:outputText id="CadastroText" value="Cadastro de localidade" />
+			</h1>
+
+			<h:panelGrid id="gridCadastro" columns="2">
+				<p:outputLabel value="Nome:" for="nome" />
+				<p:inputText id="nome" value="#{cadastroLocalidadeB.local.nome}"
+					required="true" />
+				<p:outputLabel value="Responsável:" for="user" />
+				<p:selectOneMenu value="#{cadastroLocalidadeB.local.usuario}" id="user"
+					filter="true" filterMatchMode="contains">
+					<f:selectItem itemLabel="Selecione" noSelectionOption="true" />
+					<f:selectItems value="#{cadastroLocalidadeB.local.usuario.nome}" var="usuario"
+						itemValue="#{cadastroLocalidadeB.local.usuario}" itemLabel="#{cadastroLocalidadeB.local.usuario.nome}" />
+				</p:selectOneMenu>
+			</h:panelGrid>
+			<p:messages showDetail="false" showSummary="true" autoUpdate="true" />
+			<h:messages id="msgErro" style="color: red" />
+			<h:commandButton id="botao" value="Cadastrar"
+				action="#{cadastroLocalidadeB.salvar}" />
+		</h:form>
+	</ui:define>
+</ui:composition>
